@@ -50,5 +50,12 @@ export const eliminarColaborador = async (req, res) => {
 
   const colaborador = await Colaborador.findByIdAndRemove(_id);
 
-  res.status(200).json(colaborador);
+  res.status(200).json(colaborador); BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AuthModule,
+    privModule,
+    PublicModule,
+    SharedModule,
+    MaterialModule
 };
