@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const ProductoSchema = new Schema({
+const ProyectoSchema = new Schema({
     nombre: {
         type: String,
         required: true,
@@ -13,23 +13,18 @@ const ProductoSchema = new Schema({
         type: String,
         required: true
     },
-    carrera: {
+    enlace: {
         type: String,
         required: true
     },
-    universidad: {
-        type: String,
-        required: true
-    },
-    edad: {
-        type: Number,
-        required: true
+    tecnologias: {
+        type: Array
     }
 }, {
     timestamps: true,
     versionKey: false
 });
 
-ProductoSchema.plugin(require('mongoose-autopopulate'));
+ProyectoSchema.plugin(require('mongoose-autopopulate'));
 
-export default model('Producto', ProductoSchema);
+export default model('Proyecto', ProyectoSchema);

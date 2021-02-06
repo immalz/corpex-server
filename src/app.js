@@ -7,6 +7,7 @@ import path from 'path';
 import pkg from '../package.json';
 
 import authRoutes from './routes/auth.routes';
+import proyectoRoutes from './routes/proyecto.routes';
 
 import { createRoles } from './libs/initialSetup'
 
@@ -45,5 +46,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/auth', authRoutes);
+app.use('/api/proyectos', proyectoRoutes);
 
 export default app;
