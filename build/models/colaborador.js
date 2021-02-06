@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _mongoose = require("mongoose");
 
-var ProductoSchema = new _mongoose.Schema({
+var ProyectoSchema = new _mongoose.Schema({
   nombre: {
     type: String,
     required: true
@@ -20,24 +20,19 @@ var ProductoSchema = new _mongoose.Schema({
     type: String,
     required: true
   },
-  carrera: {
+  enlace: {
     type: String,
     required: true
   },
-  universidad: {
-    type: String,
-    required: true
-  },
-  edad: {
-    type: Number,
-    required: true
+  tecnologias: {
+    type: Array
   }
 }, {
   timestamps: true,
   versionKey: false
 });
-ProductoSchema.plugin(require('mongoose-autopopulate'));
+ProyectoSchema.plugin(require('mongoose-autopopulate'));
 
-var _default = (0, _mongoose.model)('Producto', ProductoSchema);
+var _default = (0, _mongoose.model)('Proyecto', ProyectoSchema);
 
 exports["default"] = _default;

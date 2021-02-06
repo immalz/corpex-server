@@ -19,6 +19,10 @@ var _package = _interopRequireDefault(require("../package.json"));
 
 var _auth = _interopRequireDefault(require("./routes/auth.routes"));
 
+var _proyecto = _interopRequireDefault(require("./routes/proyecto.routes"));
+
+var _usuario = _interopRequireDefault(require("./routes/usuario.routes"));
+
 var _initialSetup = require("./libs/initialSetup");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -30,6 +34,11 @@ var app = (0, _express["default"])();
 app.set('pkg', _package["default"]); //cambiar la configuracion cors para produccion
 
 app.use((0, _cors["default"])());
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 var bodyParser = require('body-parser');
 
@@ -54,5 +63,7 @@ app.get('/', function (req, res) {
   });
 });
 app.use('/api/auth', _auth["default"]);
+app.use('/api/proyectos', _proyecto["default"]);
+app.use('/api/usuarios', _usuario["default"]);
 var _default = app;
 exports["default"] = _default;

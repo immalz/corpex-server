@@ -9,16 +9,17 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
-var usuarioCtrl = _interopRequireWildcard(require("../controllers/usuario.controller"));
+var proyectoCtrl = _interopRequireWildcard(require("../controllers/proyecto.controller"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var router = (0, _express.Router)();
-router.get('/', usuarioCtrl.obtenerUsuarios);
-router.get('/:_id', usuarioCtrl.obtenerUsuario);
-router.put('/:_id', usuarioCtrl.actualizarUsuario);
-router["delete"]('/:_id', usuarioCtrl.eliminarUsuario);
+router.post('/', proyectoCtrl.registrarProyecto);
+router.get('/', proyectoCtrl.obtenerProyectos);
+router.get('/:_id', proyectoCtrl.obtenerProyecto);
+router.put('/:_id', proyectoCtrl.actualizarProyecto);
+router["delete"]('/:_id', proyectoCtrl.eliminarProyecto);
 var _default = router;
 exports["default"] = _default;
