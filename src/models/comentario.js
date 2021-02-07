@@ -1,27 +1,23 @@
 import { Schema, model } from "mongoose";
 
-const ProductoSchema = new Schema({
+const ComentarioSchema = new Schema({
     nombre: {
         type: String,
         required: true,
     },
-    precio: {
-        type: Number,
-        required: true
-    },
-    descripcion: {
+    area: {
         type: String,
         required: true,
-    },
-    titulodescripcion: {
-        type: String,
-        required: true
     },
     imagen: {
         type: String,
         required: true
     },
-    enlace: {
+    descripcion: {
+        type: String,
+        required: true
+    },
+    descripcion2: {
         type: String,
         required: true
     }
@@ -30,7 +26,6 @@ const ProductoSchema = new Schema({
     versionKey: false
 });
 
+ComentarioSchema.plugin(require('mongoose-autopopulate'));
 
-ProductoSchema.plugin(require('mongoose-autopopulate'));
-
-export default model('Producto', ProductoSchema);
+export default model('Comentario', ComentarioSchema);

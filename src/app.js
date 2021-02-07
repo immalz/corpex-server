@@ -9,6 +9,8 @@ import pkg from '../package.json';
 import authRoutes from './routes/auth.routes';
 import proyectoRoutes from './routes/proyecto.routes';
 import usuarioRoutes from './routes/usuario.routes';
+import administradorRoutes from './routes/administrador.routes';
+import colaboradorRoutes from './routes/colaborador.routes';
 
 import { createRoles } from './libs/initialSetup'
 
@@ -47,7 +49,9 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/auth', authRoutes);
+app.use('/api/admin', administradorRoutes);
 app.use('/api/proyectos', proyectoRoutes);
 app.use('/api/usuarios', usuarioRoutes);
+app.use('/api/colaboradores', colaboradorRoutes);
 
 export default app;

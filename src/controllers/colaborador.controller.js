@@ -1,12 +1,13 @@
 import Colaborador from "../models/colaborador";
 
 export const registrarColaborador = async (req, res) => {
-  const { nombre, universidad, carrera, imagen, descripcion } = req.body;
+  const { nombre, universidad, carrera,edad ,  imagen, descripcion } = req.body;
   const nuevoColaborador = new Colaborador({
     nombre,
     universidad,
     carrera,
     imagen,
+    edad,
     descripcion,
   });
 

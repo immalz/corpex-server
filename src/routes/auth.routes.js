@@ -11,5 +11,9 @@ router.post('/signup', [
 
 router.post('/signin', authCtrl.signIn);
 
+router.post('/signup/admin', authCtrl.signUpAdmin);
+
+router.post('/signin/admin', authCtrl.signInAdmin);
+
 
 export default router;

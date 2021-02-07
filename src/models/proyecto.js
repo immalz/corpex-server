@@ -13,17 +13,8 @@ const ProyectoSchema = new Schema({
         type: String,
         required: true
     },
-    carrera: {
-        type: String,
-        required: true
-    },
-    universidad: {
-        type: String,
-        required: true
-    },
-    edad: {
-        type: Number,
-        required: true
+    tecnologias: {
+        type: Array
     }
 }, {
     timestamps: true,
